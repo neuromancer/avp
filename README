@@ -2,6 +2,7 @@ Aliens vs Predator Linux  http://icculus.org/avp/
 ------------------------
 
 Table of Contents:
+0. About this version (NEW!)
 1. Introduction
 2. Current Status
 3. Compilation
@@ -10,6 +11,14 @@ Table of Contents:
 a. Change History
 b. Gold edition MD5s
 
+Part 0: About this version
+--------------------------
+
+This code is based on the last release from icculus (available here: https://icculus.org/avp/files/avp-20170505-a1.tar.gz).
+It has support for 1366x768 resolution and cutscenes. This last feature was merged from the morphos release
+(available here: http://aminet.net/package/game/shoot/avp.src-morphos).
+
+The rest of this README remains unchanged.
 
 Part 1: Introduction
 --------------------
