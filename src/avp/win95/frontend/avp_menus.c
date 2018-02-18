@@ -544,7 +544,7 @@ void HandlePostGameFMVs(void)
 				ClearScreenToBlack();
 				FlipBuffers();
 				ClearScreenToBlack();
-				PlayBinkedFMV("FMVs/marineoutro.bik");
+				PlayBinkedFMV("FMVs/marineoutro.bik", 127);
 			}
 			break;
 		}
@@ -555,7 +555,7 @@ void HandlePostGameFMVs(void)
 				ClearScreenToBlack();
 				FlipBuffers();
 				ClearScreenToBlack();
-				PlayBinkedFMV("FMVs/alienoutro.bik");
+				PlayBinkedFMV("FMVs/alienoutro.bik", 127);
 			}
 			break;
 		}
@@ -566,7 +566,7 @@ void HandlePostGameFMVs(void)
 				ClearScreenToBlack();
 				FlipBuffers();
 				ClearScreenToBlack();
-				PlayBinkedFMV("FMVs/predatoroutro.bik");
+				PlayBinkedFMV("FMVs/predatoroutro.bik", 127);
 			}
 			break;
 		}
@@ -582,21 +582,21 @@ void HandlePreGameFMVs(void)
 			ClearScreenToBlack();
 			FlipBuffers();
 			ClearScreenToBlack();
-			PlayBinkedFMV("FMVs/marineintro.bik");
+			PlayBinkedFMV("FMVs/marineintro.bik", 127);
 		}
 		else if (!stricmp("temple", LevelName))
 		{
 			ClearScreenToBlack();
 			FlipBuffers();
 			ClearScreenToBlack();
-			PlayBinkedFMV("FMVs/alienintro.bik");
+			PlayBinkedFMV("FMVs/alienintro.bik", 127);
 		}
 		else if (!stricmp("fall", LevelName))
 		{
 			ClearScreenToBlack();
 			FlipBuffers();
 			ClearScreenToBlack();
-			PlayBinkedFMV("FMVs/predatorintro.bik");
+			PlayBinkedFMV("FMVs/predatorintro.bik", 127);
 		}
 	}
 }

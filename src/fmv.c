@@ -29,7 +29,7 @@ extern int NumImagesArray[];
 extern int NumImages;
 #endif
 
-void PlayFMV(char *filenamePtr);
+//void PlayFMV(char *filenamePtr);
 
 void FindLightingValueFromFMV(unsigned short *bufferPtr);
 void FindLightingValuesFromTriggeredFMV(unsigned char *bufferPtr, FMVTEXTURE *ftPtr);

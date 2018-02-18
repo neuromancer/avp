@@ -326,10 +326,10 @@ typedef enum {
 	VideoMode_DX_800x600x15,
 	VideoMode_DX_800x600x24,
 
-	VideoMode_DX_1024x768x8,
-	VideoMode_DX_1024x768x8T,
-	VideoMode_DX_1024x768x15,
-	VideoMode_DX_1024x768x24,
+	VideoMode_DX_1366x768x8,
+	VideoMode_DX_1366x768x8T,
+	VideoMode_DX_1366x768x15,
+	VideoMode_DX_1366x768x24,
 
 	VideoMode_DX_1280x1024x8,
 	VideoMode_DX_1280x1024x8T,

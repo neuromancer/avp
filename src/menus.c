@@ -1179,6 +1179,46 @@ void ReleaseAllAvPMenuGfx()
 	UnloadMenuFont();	
 }
 
+void DrawAvpMenuBink(unsigned char* buf, int width, int height, int pitch)
+{
+	int topleftX = ((ScreenDescriptorBlock.SDB_Width - width)>>1);
+	int topleftY = ((ScreenDescriptorBlock.SDB_Height - height)>>1);
+	
+	int length = width;
+	if (ScreenDescriptorBlock.SDB_Width - topleftX < length) {
+		length = ScreenDescriptorBlock.SDB_Width - topleftX;
+	}
+	if (length <= 0) return;
+	
+
+	if (SDL_MUSTLOCK(surface)) {
+		if (SDL_LockSurface(surface) < 0) {
+			return;
+		}
+	}
+
+	unsigned short* srcPtr = (unsigned short*) buf;
+	unsigned short* dstPtr = (unsigned short*) ((((unsigned char *)surface->pixels) + (topleftY*surface->pitch)) + (topleftX*2));
+
+	unsigned int srcPitch = (pitch>>1);
+	unsigned int dstPitch = (surface->pitch>>1);
+
+	for(int y=height; y!=0; y--)
+	{
+		unsigned short* s = srcPtr;
+		unsigned short* d = dstPtr;
+		for(int x=width; x!=0; x--)
+			*d++ = *s++;
+			
+		srcPtr += srcPitch;
+		dstPtr += dstPitch;
+	}
+	
+	if (SDL_MUSTLOCK(surface)) {
+		SDL_UnlockSurface(surface);
+	}
+}
+
 void DrawAvPMenuGfx(enum AVPMENUGFX_ID menuGfxID, int topleftX, int topleftY, int alpha,enum AVPMENUFORMAT_ID format)
 {
 	AVPMENUGFX *gfxPtr;

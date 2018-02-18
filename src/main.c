@@ -248,7 +248,7 @@ VideoModeStruct VideoModeList[] = {
 {	640,	480,	0	},
 {   720,    480,    0   },
 {	800,	600,	0	},
-{	1024,	768,	0	},
+{	1366,	768,	0	},
 {	1152,	864,	0	},
 {   1280,   720,    0   },
 {   1280,   768,    0   },
@@ -1228,6 +1228,9 @@ int main(int argc, char *argv[])
 	LoadKeyConfiguration();
 	
 	SoundSys_Start();
+
+        BinkSys_Init();
+
 	if (WantCDRom) CDDA_Start();
 	
 	InitTextStrings();
@@ -1419,6 +1422,8 @@ if (AvP_MainMenus())
 	ExitSystem();
 	
 	CDDA_End();
+        BinkSys_Release();
+
 	ClearMemoryPool();
 	
 	return 0;

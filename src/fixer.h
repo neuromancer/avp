@@ -152,6 +152,18 @@ typedef unsigned __int64 uint64_t;
 #define FILE_ATTRIBUTE_DIRECTORY	0x1000
 #define FILE_ATTRIBUTE_NORMAL		0x2000
 
+#if defined(__BIG_ENDIAN__)
+	extern void DoByteSwap2(void* x);
+	extern void DoByteSwap4(void* x);
+	extern void DoByteSwap8(void* x);
+	#define BYTESWAP2(x)	DoByteSwap2((void*)&x);
+	#define BYTESWAP4(x)	DoByteSwap4((void*)&x);
+	#define BYTESWAP8(x)	DoByteSwap8((void*)&x);
+#else
+	#define BYTESWAP2(x)	{}
+	#define BYTESWAP4(x)	{}
+	#define BYTESWAP8(x)	{}
+#endif
 
 HANDLE CreateFile(const char *file, int write, int x, int y, int flags, int flags2, int z);
 HANDLE CreateFileA(const char *file, int write, int x, int y, int flags, int flags2, int z);
