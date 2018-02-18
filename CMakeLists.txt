@@ -1,3 +1,4 @@
+
 # Aliens vs Predator Linux - http://icculus.org/avp/
 # CMake 2.8 project
 CMAKE_MINIMUM_REQUIRED(VERSION 2.8)
@@ -44,6 +45,7 @@ ENDIF(AVP_WEB)
 IF(NOT AVP_WEB)
     INCLUDE(FindOpenGLES2.cmake)
     INCLUDE(FindSDL2.cmake)
+    INCLUDE(FindLibAV.cmake)
     INCLUDE(FindSDL)
     INCLUDE(FindOpenGL)
     INCLUDE(FindOpenAL)
@@ -151,6 +153,7 @@ IF(NOT AVP_WEB)
 ENDIF(NOT AVP_WEB)
 
 # required source files
+LIST(APPEND source src/bink.c)
 LIST(APPEND source src/stubs.c)
 LIST(APPEND source src/version.c)
 LIST(APPEND source src/mathline.c)
@@ -462,4 +465,10 @@ IF(NOT AVP_WEB)
     ENDIF(OPENGL_TYPE STREQUAL "OPENGLES2")
 
     TARGET_LINK_LIBRARIES(avp ${OPENAL_LIBRARY})
+    TARGET_LINK_LIBRARIES(avp ${LIBAV_LIBRARIES})
+    TARGET_LINK_LIBRARIES(avp ${SWSCALE_LIBRARIES})
+    TARGET_LINK_LIBRARIES(avp ${AVCODEC_LIBRARIES})
+
+
+
 ENDIF(NOT AVP_WEB)
