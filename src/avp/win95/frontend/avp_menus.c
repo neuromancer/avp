@@ -2270,7 +2270,7 @@ static void ActUponUsersInput(void)
 			signed int key,selectedKey=-1;
 
 			// see if a valid key has been pressed
-			for (key = 0 ; key <= MAX_NUMBER_OF_INPUT_KEYS ; key++)
+			for (key = 0 ; key < MAX_NUMBER_OF_INPUT_KEYS ; key++)
 			{
 				if (!(key == KEY_ESCAPE) &&
 //					!(key >= KEY_F1 && key <= KEY_F12) &&
